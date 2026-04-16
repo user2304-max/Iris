@@ -3,16 +3,15 @@ import numpy as np
 import pandas as pd
 from sklearn.ensemble import RandomForestClassifier
 
-st.title("🚢 Titanic Survival Predictor")
+st.title("Titanic Survival Predictor")
 
-# Load dataset from same folder
+
 @st.cache_data
 def load_data():
     return pd.read_csv("titanic.csv")
 
 df = load_data()
 
-# Data preprocessing
 df['Age'] = df['Age'].fillna(df['Age'].median())
 df['Embarked'] = df['Embarked'].fillna(df['Embarked'].mode()[0])
 
@@ -54,6 +53,6 @@ if st.button("Predict"):
     result = model.predict(data)[0]
 
     if result == 1:
-        st.success("✅ Survived")
+        st.success("Survived")
     else:
-        st.error("❌ Not Survived")
+        st.error("Not Survived")
