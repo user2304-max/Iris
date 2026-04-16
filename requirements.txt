@@ -1,8 +1,4 @@
 streamlit
-tensorflow==2.13.0
-joblib
+pandas
 numpy
 scikit-learn
-pandas
-matplotlib
-seaborn
